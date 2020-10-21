@@ -1,5 +1,7 @@
-@extends('template.template1')
-       
+@extends('template.header')
+
+@extends('template.template')
+      
 @section('content')
     <h1>Pacientes</h1>
     <div class="container span7 text-center col-md-7 col-md-offset-2">
@@ -7,7 +9,6 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
                         <th scope="col" style="text-align:left;">Nome</th>
                         <th scope="col">Data Nascimento</th>
                         <th scope="col">Município</th>
@@ -17,9 +18,8 @@
                 <tbody>
                     @foreach($pacientes as $paciente)
                         <tr>
-                            <th scope="row">{{$paciente->id}}</th>
                             <td style="text-align:left;">{{$paciente->nome}}</td>
-                            <td>{{$paciente->datanasc}}</td>
+                            <td>{{date('d/m/Y', strtotime($paciente->datanasc))}}</td>
                             <td style="text-align:left;">{{$paciente->municipio}}</td>
                             
                             <td>
@@ -39,4 +39,6 @@
             {!! $pacientes->links() !!}
         </div>
     </div>
-@endsection
+@stop
+
+@extends('template.footer')

@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('home');
+});
+
 Route::resource('/procedimento', 'App\Http\Controllers\ProcedimentoController');
 
 Route::get('delete',      'App\Http\Controllers\GrupoController@destroy');
@@ -37,7 +41,3 @@ Route::get('apagamunicipio', 'App\Http\Controllers\MunicipioController@destroy')
 Route::get('criamunicipio',  'App\Http\Controllers\MunicipioController@create');
 Route::get('municipioindex', 'App\Http\Controllers\MunicipioController@index');
 Route::resource('municipio', 'App\Http\Controllers\MunicipioController');
-
-Route::get('/', function () {
-    return view('welcome');
-});

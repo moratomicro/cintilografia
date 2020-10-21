@@ -12,4 +12,7 @@ class Paciente extends Model
         'nome', 'datanasc', 'municipio'
     ];
     
+    protected $dates = ['data'];
+
+    protected $dataFormat = 'm-d-Y';
 }

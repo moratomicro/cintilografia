@@ -13,7 +13,7 @@ class PacienteController extends Controller
     
     private $paciente;
     private $municipio;
-    private $totalPage = 10;
+    private $totalPage = 16;
     
     public function __construct(Paciente $paciente, Municipio $municipio) {
         $this->paciente = $paciente;

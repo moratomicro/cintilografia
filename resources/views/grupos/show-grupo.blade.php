@@ -1,4 +1,6 @@
-@extends('template.template1')
+@extends('template.header')
+
+@extends('template.template')
 
 @section('content')
     <div class="container span7 text-left col-md-5 col-md-offset-3">
@@ -24,5 +26,7 @@
             {!! Form::close() !!}
         </div>
     </div>
-@endsection
+@stop
+
+@extends('template.footer')
 

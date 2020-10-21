@@ -1,5 +1,7 @@
-@extends('template.template1')
-       
+@extends('template.header')
+
+@extends('template.template')
+   
 @section('content')
 <div class="container span7 text-center col-md-40 col-md-offset-0">
 <h3 class="title-pg">Gestão do procedimento: <br> <b>{{$procedimento->nome ?? 'Novo'}}</b></h3>
@@ -58,5 +60,7 @@
                 </div>
             @endif
         </div>
-    </div>
-@endsection
+    </div> 
+@stop
+
+@extends('template.footer')

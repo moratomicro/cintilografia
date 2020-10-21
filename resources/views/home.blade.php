@@ -1,10 +1,10 @@
 @extends('template.header')
 
 @extends('template.template')
-    
+
 @section('content')
     <div>
-        <h1><u>{{ $title ?? 'Visualizar/Deletar Registro' }}</u></h1>
+        <h1>{{ $title ?? 'Home Page' }}</h1>
     </div> 
 @stop
 

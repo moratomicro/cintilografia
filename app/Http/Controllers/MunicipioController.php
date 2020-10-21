@@ -9,7 +9,7 @@ use App\Http\Requests\MunicipioFormRequest;
 class MunicipioController extends Controller
 {
     private $municipio;
-    private $totalPage = 10;
+    private $totalPage = 15;
     
     public function __construct(Municipio $municipio) {
         $this->municipio = $municipio;

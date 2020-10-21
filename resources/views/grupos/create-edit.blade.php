@@ -1,8 +1,10 @@
-@extends('template.template1')
-       
+@extends('template.header')
+
+@extends('template.template')
+
 @section('content')
-<div class="container span7 text-center col-md-40 col-md-offset-0">
-<h3 class="title-pg">Gestão do(a) grupo: <br> <b>{{$grupo->nome ?? 'Novo'}}</b></h3>
+    <div class="container span7 text-center col-md-40 col-md-offset-0">
+    <h3 class="title-pg">Gestão do(a) grupo: <br> <b>{{$grupo->nome ?? 'Novo'}}</b></h3>
     @if( isset($errors) && count($errors) > 0)
 	<div class="alert alert-danger">
             @foreach( $errors->all() as $error)
@@ -43,4 +45,6 @@
             @endif
         </div>
     </div>
-@endsection
+@stop
+
+@extends('template.footer')

@@ -1,4 +1,6 @@
-@extends('template.template1')
+@extends('template.header')
+
+@extends('template.template')
 
 @section('content')
     <div class="container span7 text-left col-md-5 col-md-offset-3">
@@ -9,7 +11,7 @@
         <div style="background-color:lightblue; width: 500px">
             <p><b>ID: </b>{{$paciente->id}}</p>
             <p><b>Nome: </b>{{$paciente->nome}}</p>
-            <p><b>Data de Nascimento: </b>{{$paciente->datanasc}}</p>
+            <p><b>Data de Nascimento: </b>{{date('d/m/Y', strtotime($paciente->datanasc))}}</p>
             <p><b>Município: </b>{{$paciente->municipio}}</p>
 
             <hr>
@@ -26,4 +28,6 @@
             {!! Form::close() !!}
         </div>
     </div>
-@endsection
+@stop
+
+@extends('template.footer')

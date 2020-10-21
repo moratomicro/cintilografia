@@ -1,4 +1,6 @@
-@extends('template.template1')
+@extends('template.header')
+
+@extends('template.template')
 
 @section('content')
     <div class="container span7 text-left col-md-5 col-md-offset-3">
@@ -25,5 +27,7 @@
                 {!! Form::submit("Deletar Procedimento: $procedimento->nome", ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
         </div>
-    </div>
-@endsection
+    </div> 
+@stop
+
+@extends('template.footer')

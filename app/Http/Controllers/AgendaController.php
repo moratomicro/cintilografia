@@ -8,19 +8,21 @@ use App\Http\Requests\PacienteFormRequest;
 use App\Models\Agenda;
 use App\Models\Paciente;
 use App\Models\Municipio;
-
+use App\Models\Procedimento;
 
 class AgendaController extends Controller
 {
     private $agenda;
     private $paciente;
     private $municipio;
+    private $procedimento;
     private $totalPage = 10;
 
-    public function __construct(Agenda $agenda, Paciente $paciente, Municipio $municipio) {
+    public function __construct(Agenda $agenda, Paciente $paciente, Municipio $municipio, Procedimento $procedimento) {
         $this->agenda = $agenda;
         $this->paciente = $paciente;
         $this->municipio = $municipio;
+        $this->procedimento = $procedimento;
     }
 
     /**
@@ -45,9 +47,10 @@ class AgendaController extends Controller
     {
         $title = 'Agendar Paciente';
         
-        $cidades = $this->municipio->all('nome');
+        $pacientes = $this->paciente->all('nome');
+        $procedimentos = $this->procedimento->all();
         
-        return view('agendas.create-edit', compact('title', 'cidades'));
+        return view('agendas.create-edit', compact('title', 'pacientes', 'procedimentos'));
     }
 
     /**
@@ -58,7 +61,17 @@ class AgendaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataForm = $request->except('_token');
+
+        $dataForm['active'] = (!isset($dataForm['active'])) ? 0 : 1;
+        
+        //Faz o cadastro da agenda
+        $insert = $this->agenda->create($dataForm);
+
+        if ($insert)
+            return redirect()->route('agenda.index')->with('success', 'Registro inserido com sucessso!');
+        else
+            return redirect()->route('agenda.create-edit')->with('error', 'Falha ao tentar inserir o registro.');
     }
 
     /**
