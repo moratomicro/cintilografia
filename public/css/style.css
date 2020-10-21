@@ -1,0 +1,132 @@
+body {
+    position: relative;
+}
+
+.logo {
+    align-items: stretch;
+    vertical-align: auto;
+    border-style: none;
+}
+
+.menu1 ul {
+    padding:0px;
+    padding-left: 18em;
+    margin:30px;
+    list-style:none;
+    word-spacing: 1px;
+}
+
+.menu1 ul li {
+    display: inline;
+}
+
+.menu ul li a {
+    padding: 2px 10px;
+    display: inline-block;
+    background-color: #EDEDED;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 3px solid #EDEDED;
+}
+
+.menu ul li a:hover{
+    background-color: #D6D6D6;
+    color: #6D6D6D;
+    border-bottom: 3px solid #EA0000;
+}
+
+.posicao {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10pt;
+    color:black;
+    position: absolute;   /* posição absoluta */
+    bottom: 0;   /* Fixa a div no fim da página */
+    width: 30%;   /* Largura estende por toda página da div */
+    height: 30px;   /* Altura da div */
+}
+
+/*
+.footer1 {
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    display: block;
+}
+
+.bd-footer {
+    position: absolute;
+    bottom: 0;
+    text-align: left;
+    font-size: .875rem;
+    background-color: black;
+}
+
+.text-muted {
+    color: #ffffff!important;
+}
+
+.p-md-5 {
+    padding: 3rem!important;
+}
+
+.p-3 {
+    padding: 1rem!important;
+}
+
+
+.bd-footer-links li {
+    display: inline;        
+}
+
+.bd-footer-links li a {
+    padding: 2px 10px;
+    display: inline-block;   
+    color: #6783df;
+    text-decoration: none;
+    border-bottom:3px solid #ededed;
+}
+
+.bd-footer-links li a:hover {
+    background-color:#bec8ce;
+    color: #6D6D6D;
+    border-bottom:3px solid #5a63db;
+}
+
+.action1 {
+    text-align: center;
+    width:130px;    
+}
+
+.action {
+    text-align: center;
+    background-color: rgb(235, 230, 230);
+}
+
+.dv1 {
+    align-items: center;
+}
+
+.mdl {
+    display: block !important; 
+}
+
+.mdl-dialog {
+    overflow-y: initial !important;
+}
+
+.mdl-body {
+    align-items: center;
+    height: 700px;
+    overflow-y: auto;
+}
+
+.textarea {
+    width: 1320px; 
+    height: 150px; 
+    resize: none;
+    margin: 10px;
+}*/
+
+#rolagem{
+    overflow:auto; 
+   }
