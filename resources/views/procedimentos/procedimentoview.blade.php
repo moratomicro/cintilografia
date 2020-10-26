@@ -3,17 +3,17 @@
 @extends('template.template')
 
 @section('content')
-    <h1><u>{{ $title ?? 'Procedimentos Ofertados' }}</u></h1>
+    <h1 style="text-align:center;"><u>{{ $title ?? 'Procedimentos Ofertados' }}</u></h1>
     
-    <div class="container span7 text-center col-md-11 col-md-offset-1">
+    <div class="container-fluid span7 text-center col-md-50 col-md-offset-0">
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-bordered" style="height: 100px;">
                 <thead>
                     <tr>
-                        <th scope="col">Código SUS</th>
-                        <th scope="col" style="text-align:left;">Procedimento</th>
-                        <th scope="col">Grupo</th>
-                        <th scope="col">Valor</th>
+                        <th scope="col" style="text-align:left; width:125px; background-color: #81BEF7;">Código SUS</th>
+                        <th scope="col" style="text-align:left; width:auto; background-color: #81BEF7;">Procedimento</th>
+                        <th scope="col" style="text-align:left; width:auto; background-color: #81BEF7;">Grupo</th>
+                        <th scope="col" style="text-align:left; width:100px; background-color: #81BEF7;">Valor</th>
                     </tr>
                 </thead>
                 <tbody>

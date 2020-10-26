@@ -32,7 +32,7 @@ class AgendaController extends Controller
      */
     public function index()
     {
-        $title = 'Agendas';
+        $title = 'Agenda Mensal';
         $agendas = $this->agenda->paginate($this->totalPage);
         
         return view('agendas.agendaview', compact('agendas', 'title'));
@@ -47,8 +47,8 @@ class AgendaController extends Controller
     {
         $title = 'Agendar Paciente';
         
-        $pacientes = $this->paciente->all('nome');
-        $procedimentos = $this->procedimento->all();
+        $pacientes = $this->paciente->all('nome', 'datanasc');
+        $procedimentos = $this->procedimento->all('cod_sus', 'nome');
         
         return view('agendas.create-edit', compact('title', 'pacientes', 'procedimentos'));
     }

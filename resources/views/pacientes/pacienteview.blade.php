@@ -3,16 +3,16 @@
 @extends('template.template')
       
 @section('content')
-    <h1>Pacientes</h1>
-    <div class="container span7 text-center col-md-7 col-md-offset-2">
+    <h1 style="text-align:center;"><u>Pacientes</u></h1>
+    <div class="container span7 text-center col-md-9 col-md-offset-2">
         <div class="table-responsive">
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col" style="text-align:left;">Nome</th>
-                        <th scope="col">Data Nascimento</th>
-                        <th scope="col">Município</th>
-                        <th scope="col" width="150px">Ação</th>
+                        <th scope="col" style="text-align:left; width:200px; background-color: #81BEF7;">Nome</th>
+                        <th scope="col" style="text-align:left; width:125px; background-color: #81BEF7;">Data Nascimento</th>
+                        <th scope="col" style="text-align:left; width:125px; background-color: #81BEF7;">Município</th>
+                        <th scope="col" style="text-align:center; width:80px; background-color: #81BEF7;">Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,7 +22,7 @@
                             <td>{{date('d/m/Y', strtotime($paciente->datanasc))}}</td>
                             <td style="text-align:left;">{{$paciente->municipio}}</td>
                             
-                            <td>
+                            <td style="text-align:center;">
                                 <a href="{{route('paciente.edit', $paciente->id)}}" class="actions edit">
                                    <span class="glyphicon glyphicon-pencil" title="Editar/Atualizar cadastro"></span>
                                 </a>

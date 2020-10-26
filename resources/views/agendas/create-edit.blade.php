@@ -20,23 +20,23 @@
         {!! Form::open(['route' => 'agenda.store', 'class' => 'form']) !!}    
     @endif
         <div style="background-color:lightblue; width: 950px; text-align: left">
-            <div class="form-group" style="width: 65px">
-                {!! Form::label('pacienteNome', 'paciente:', ['class' => 'control-label']) !!}                
+            <div class="form-group" style="width: 500px">
+                {!! Form::label('pacienteNome', 'pacientes:', ['class' => 'control-label']) !!}                
                 <!-- {!! Form::select('pacienteNome', $pacientes, null, ['class' => 'form-control']) !!} -->
-                <select name="grupo" class="form-control">
+                <select name="pacienteNome" class="form-control">
                     <option>Paciente</option>
                     @foreach($pacientes as $paciente)
-                    <option value="{{$paciente}}">{{$paciente}}</option>
+                    <option value="{{$paciente}}">{{$paciente->nome}}</option>
                     @endforeach
                 </select>               
             </div>
-            <div class="form-group" style="width: 65px">
+            <div class="form-group" style="width: 800px">
                 {!! Form::label('procedimento', 'Procedimento:', ['class' => 'control-label']) !!}                
                 <!-- {!! Form::select('procedimento', $procedimentos, null, ['class' => 'form-control']) !!} -->
-                <select name="grupo" class="form-control">
+                <select name="procedimento" class="form-control">
                     <option>Procedimentos</option>
                     @foreach($procedimentos as $procedimento)
-                    <option value="{{$procedimento}}">{{$procedimento}}</option>
+                    <option value="{{$procedimento}}">{{$procedimento->nome}}</option>
                     @endforeach
                 </select>               
             </div>            
@@ -76,9 +76,6 @@
             @endif
         </div>
     </div> 
-@stop
-
-@extends('template.footer') 
 @stop
 
 @extends('template.footer')
