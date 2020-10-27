@@ -8,11 +8,5 @@ class Paciente extends Model
 {
     protected $table = 'paciente';
     
-    protected $fillable = [
-        'nome', 'datanasc', 'municipio'
-    ];
-    
-    protected $dates = ['data'];
-
-    protected $dataFormat = 'm-d-Y';
+    protected $fillable = ['nome', 'datanasc', 'municipioNome'];
 }

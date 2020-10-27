@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreatePacientesTable extends Migration
+class CreatePacienteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,9 +15,10 @@ class CreatePacientesTable extends Migration
     {
         Schema::create('paciente', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
+            $table->string('nome', 100);
             $table->date('datanasc');
-            $table->string('municipio');
+            $table->integer('municipioNome')->unsigned();
+            $table->foreign('municipioNome')->references('id')->on('municipio')->onDelete('cascade');
             $table->timestamps();
         });
     }

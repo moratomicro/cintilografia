@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateAgendasTable extends Migration
+class CreateAgendaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,11 +15,10 @@ class CreateAgendasTable extends Migration
     {
         Schema::create('agenda', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('pacienteNome');
-            $table->date('dtNasc');
-            $table->string('municipio');
-            $table->string('procedimento');
-            $table->decimal('valorUnitario');
+            $table->integer('pacienteNome')->unsigned();
+            $table->foreign('pacienteNome')->references('id')->on('paciente')->onDelete('cascade');
+            $table->integer('procedimentoNome')->unsigned();
+            $table->foreign('procedimentoNome')->references('id')->on('procedimento')->onDelete('cascade');
             $table->date('dtExame');
             $table->time('horario');
             $table->string('mes');

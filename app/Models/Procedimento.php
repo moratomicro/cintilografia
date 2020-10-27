@@ -8,7 +8,5 @@ class Procedimento extends Model
 {
     protected $table = 'procedimento';
     
-    protected $fillable = [
-        'cod_sus', 'nome', 'grupo', 'valor',
-    ];
+    protected $fillable = ['cod_sus', 'nome', 'grupoNome', 'valor'];
 }

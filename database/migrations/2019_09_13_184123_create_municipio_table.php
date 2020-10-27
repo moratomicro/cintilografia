@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCotaDispTable extends Migration
+class CreateMunicipioTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateCotaDispTable extends Migration
      */
     public function up()
     {
-        Schema::create('cota_disp', function (Blueprint $table) {
+        Schema::create('municipio', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('municipio');
-            $table->decimal('cota_disponivel');
+            $table->string('nome', 100);
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateCotaDispTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cota_disp');
+        Schema::dropIfExists('municipio');
     }
 }

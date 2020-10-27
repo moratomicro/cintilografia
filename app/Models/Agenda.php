@@ -8,12 +8,5 @@ class Agenda extends Model
 {
     protected $table = 'agenda';
 
-    protected $fillable = [
-        'pacienteNome',        
-        'procedimento',
-        'dtExame',
-        'horario',
-        'mes',
-        'ano',
-    ];
+    protected $fillable = ['pacienteNome', 'procedimentoNome', 'dtExame', 'horario', 'mes', 'ano'];
 }
